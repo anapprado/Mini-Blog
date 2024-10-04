@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Challenge 10 - Mini Blog</title>
+  <script src="https://kit.fontawesome.com/e817e6100b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="blog.css">
+  <style>
+    /* Basic Reset */
+    body, h1, h2, p, ul, li, button, input, textarea {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Body Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    /* Container Styling */
+    .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 800px;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        color: #4A90E2;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 5px;
+        color: #333;
+    }
+
+    /* Posts Container Styling */
+    #posts-container {
+        margin-bottom: 30px;
+    }
+
+    #posts-list .post {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    #posts-list .post:hover {
+        background-color: #eef5ff;
+    }
+
+    .post h3 {
+        color: #4A90E2;
+    }
+
+    .post p {
+        margin: 10px 0;
+    }
+
+    .post small {
+        color: #777;
+        font-size: 0.8rem;
+    }
+
+    /* New Post Form Styling */
+    #new-post-form {
+        background-color: #eef3f7;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    input[type="text"], input[type="date"], textarea {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        width: 100%;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="date"]:focus, textarea:focus {
+        border-color: #4A90E2;
+        outline: none;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    button {
+        background-color: #4A90E2;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 1rem;
+    }
+
+    button:hover {
+        background-color: #357ABD;
+    }
+
+    #clear-storage {
+        background-color: #FF6B6B;
+        margin-top: 10px;
+    }
+
+    #clear-storage:hover {
+        background-color: #FF4949;
+    }
+
+    /* Media Query for Responsive Design */
+    @media (max-width: 600px) {
+        .container {
+            padding: 15px;
+        }
+
+        input[type="text"], input[type="date"], textarea {
+            font-size: 0.9rem;
+        }
+
+        button {
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+      <h1>Mini Blog</h1>
+      <div id="posts-container">
+          <h2><i class="fas fa-newspaper"></i> Posts</h2>
+          <div id="posts-list"></div>
+      </div>
+      <div id="new-post-form">
+          <h2><i class="fas fa-plus-circle"></i> Add New Post</h2>
+          <form id="post-form">
+              <input type="text" id="post-title" placeholder="Post Title" required>
+              <input type="date" id="post-date" required>
+              <textarea id="post-content" placeholder="Post Content" required></textarea>
+              <button type="submit"><i class="fas fa-paper-plane"></i> Submit Post</button>
+          </form>
+      </div>
+      <div>
+          <button id="clear-storage"><i class="fas fa-trash-alt"></i> Limpar Livros</button>
+      </div>
+  </div>
+  <script src="blog.js"></script>
+</body>
+</html>
